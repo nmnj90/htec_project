@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            {{#if title}}
+                {{title}}
+            {{else}}
+                Home
+            {{/if}} 
+        </title> 
+    </head>
+    <body>
+        <header class="header">
+            {{#> header-block}}
+                {{> ../partials/header }}
+            {{/header-block}}
+        </header>
+        <main class="main">
+            {{#> main-block}}
+                <p>This is the default main block content.</p>
+            {{/main-block}}
+        </main>
+
+        <footer class="footer">
+            {{#> footer-block}}
+                {{> ../partials/footer }}
+            {{/footer-block}}
+        </footer>
+
+        {{#> scripts-block}}
+            {{!-- Custom scripts per page can be added. --}}
+        {{/scripts-block}}
+    </body>
+</html>
+

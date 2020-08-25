@@ -1,0 +1,19 @@
+//--------------------------------------------------------------
+// Header
+//--------------------------------------------------------------
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-menu-link {
+    margin-left: 10px;
+}
