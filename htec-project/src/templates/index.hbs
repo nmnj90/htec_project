@@ -1,7 +1,14 @@
 {{#> layouts/base title="Page One" }}
 
     {{#*inline "main-block"}}
-        <ul id="top-results"></ul>
+        <div class="tabs">
+            <div class="tab-item tab-is-active" id="tab-top-news">
+                <ul id="js-top-results" class="top-results"></ul>
+            </div>
+            <div class="tab-item" id="tab-categories">
+                Kategorije
+            </div>
+        </div>
     {{/inline}}
 
 {{/layouts/base}}

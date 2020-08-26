@@ -2,11 +2,11 @@ export default class NewsData {
 
     constructor() {
       this.run();
-      this.section = 'top-results';
+      this.section = 'js-top-results';
     }
 
     run() {
-        this.getNewsData('gb', 'top-results');
+        this.getNewsData('gb', 'js-top-results');
 
         for(let i = 0;i < document.getElementsByClassName('js-header-lang-btn').length; i++) {
             document.getElementsByClassName('js-header-lang-btn')[i].addEventListener('click', this.buttonTrigger.bind(this));
