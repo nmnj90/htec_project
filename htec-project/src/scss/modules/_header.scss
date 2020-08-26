@@ -30,17 +30,18 @@
 }
 
 .header-lang-btn {
-    background-color: $btn-color;
-    border:1px solid transparent;
-    color: #fff;
+    background-color: rgba(#fff, .8);
+    border:1px solid $btn-color;
+    color: $btn-color;
     font-size: 18px;
     padding: 5px;
     text-transform: uppercase;
-
+    transition: all .2s ease;
+    
     &.btn-is-active {
-        background-color: rgba(#fff, .8);
-        border-color: $btn-color;
-        color: $btn-color;
+        background-color: $btn-color;
+        border-color: transparent;
+        color: #fff;
     }
 }
 
