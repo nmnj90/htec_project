@@ -23,6 +23,7 @@
 .header-navigation-link {
     border-right: 1px solid ;
     color: $dark-txt-color;
+    cursor: pointer;
     font-size: 25px;
     margin-right: 10px;
     padding-right: 10px;
@@ -40,6 +41,16 @@
         background-color: rgba(#fff, .8);
         border-color: $btn-color;
         color: $btn-color;
+    }
+}
+
+.header-input-wrapper {
+    width: 0;
+    overflow: hidden;
+    transition: all .2s ease;
+
+    &.header-input-wrapper-is-active {
+        width: 100%;
     }
 }
 

@@ -1,4 +1,4 @@
-import Example from './modules/example.js';
+import InputTrigger from './modules/input-trigger.js';
 
 //Init module
-new Example();
+new InputTrigger();
