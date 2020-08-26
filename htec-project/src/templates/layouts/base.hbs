@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             {{#if title}}
@@ -14,16 +15,18 @@
         </title> 
     </head>
     <body>
-        <header class="header">
-            {{#> header-block}}
-                {{> ../partials/header }}
-            {{/header-block}}
-        </header>
-        <main class="main">
-            {{#> main-block}}
-                <p>This is the default main block content.</p>
-            {{/main-block}}
-        </main>
+        <div class="body-wrapper">
+            <header class="header">
+                {{#> header-block}}
+                    {{> ../partials/header }}
+                {{/header-block}}
+            </header>
+            <main class="main">
+                {{#> main-block}}
+                    <p>This is the default main block content.</p>
+                {{/main-block}}
+            </main>
+        </div>
 
         <footer class="footer">
             {{#> footer-block}}

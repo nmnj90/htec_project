@@ -3,17 +3,51 @@
 //--------------------------------------------------------------
 
 .header {
-    align-items: center;
+    background-color: $header-bg;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+.header-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 10px 15px;
 }
 
-.nav-menu {
-    list-style-type: none;
+.header-navigation,
+.header-lang,
+.header-navigation-search {
+    align-items: center;;
     display: flex;
 }
 
-.nav-menu-link {
-    margin-left: 10px;
+.header-navigation-link {
+    border-right: 1px solid ;
+    color: $dark-txt-color;
+    font-size: 25px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.header-lang-btn {
+    background-color: $btn-color;
+    border:1px solid transparent;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px;
+    text-transform: uppercase;
+
+    &.btn-is-active {
+        background-color: rgba(#fff, .8);
+        border-color: $btn-color;
+        color: $btn-color;
+    }
+}
+
+.header-input {
+    background-color: #fff;
+    border: 0;
+    color: $dark-txt-color;
+    font-size: 18px;
+    outline: none;
+    padding: 8px;;
 }
