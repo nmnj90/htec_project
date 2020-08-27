@@ -8,14 +8,7 @@ export default class NewsData {
     }
 
     run() {
-        this.getNewsData('js-top-results', 'gb');
-        this.getNewsData('js-business', 'gb' , 'business');
-        this.getNewsData('js-entertainment', 'gb' , 'entertainment');
-        this.getNewsData('js-general', 'gb' , 'general');
-        this.getNewsData('js-health', 'gb' , 'health');
-        this.getNewsData('js-science', 'gb' , 'science');
-        this.getNewsData('js-sports', 'gb' , 'sports');
-        this.getNewsData('js-technology', 'gb' , 'technology');
+        this.getNewsData('js-top-results', 'gb', null);
 
         for(let i = 0; i < document.getElementsByClassName('js-tab').length; i++) {
             document.getElementsByClassName('js-tab')[i].addEventListener('click', this.tabClick.bind(this));
@@ -45,15 +38,17 @@ export default class NewsData {
             let articles = data.articles;
             return articles.map(function(article) {
                 let li = document.createElement('li'),
+                    div = document.createElement('div'),
                     h2 = document.createElement('h2'),
                     img = document.createElement('img'),
                     p = document.createElement('p');
                 h2.innerHTML = article.author;
                 img.src = article.urlToImage;
                 p.innerHTML = article.description;
-                li.appendChild(h2);
-                li.appendChild(img);
-                li.appendChild(p);
+                li.appendChild(div);
+                div.appendChild(img);
+                div.appendChild(h2);
+                div.appendChild(p);
                 ul.appendChild(li);
             })
         })
@@ -74,10 +69,10 @@ export default class NewsData {
             this.category = null;
             this.section = 'js-top-results';
         } else {
-            console.log(document.getElementsByClassName('accordion-is-active')[0].firstElementChild.innerHTML);
             this.category = document.getElementsByClassName('accordion-is-active')[0].firstElementChild.innerHTML;
             this.section = 'js-' + document.getElementsByClassName('accordion-is-active')[0].firstElementChild.innerHTML;
         }
+        this.getNewsData(this.section, this.lang, this.category);
     }
 
     accordionClick(e){
@@ -85,5 +80,6 @@ export default class NewsData {
         e.target.parentElement.classList.toggle('accordion-is-active');
         this.category = e.target.innerHTML;
         this.section = 'js-' + e.target.innerHTML;
+        this.getNewsData(this.section, this.lang , this.category);
     }
 }
