@@ -36,7 +36,6 @@ export default class NewsData {
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
             let articles = data.articles;
-            console.log(data);
             return articles.map(function(article) {
                 let li = document.createElement('li'),
                     div = document.createElement('div'),
@@ -75,6 +74,7 @@ export default class NewsData {
             this.category = document.getElementsByClassName('accordion-is-active')[0].firstElementChild.innerHTML;
             this.section = 'js-' + document.getElementsByClassName('accordion-is-active')[0].firstElementChild.innerHTML;
         }
+        document.getElementById(this.section).innerHTML = '';
         this.getNewsData(this.section, this.lang, this.category);
     }
 
