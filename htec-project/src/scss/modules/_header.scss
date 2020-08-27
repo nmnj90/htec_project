@@ -17,13 +17,16 @@
 }
 
 .header-navigation-wrapper {
+    display: flex;
+    align-items: center;
     @media only screen and (max-width: 600px) {
         background-color: #fff;
+        display: block;
         left: 0;
         height: 0;
         overflow: hidden;
         position: absolute;
-        top: 88px;
+        top: 73px;
         width: 100%;
 
         &.navigation-is-active {
