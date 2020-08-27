@@ -41,7 +41,8 @@
         width: 0;
     }
 
-    &:hover {
+    &:hover,
+    &.link-is-active {
         &:before {
             width: 100%;
         }

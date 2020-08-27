@@ -28,14 +28,15 @@ export default class NewsData {
         const ul = document.getElementById(section);
         let url;
         if(categoryValue == null ) {
-            url = 'https://newsapi.org/v2/top-headlines?country=' + countryValue + '&apiKey=1bba8f14ce07454285f34240181d07fc';
+            url = 'https://newsapi.org/v2/top-headlines?country=' + countryValue + '&apiKey=da33ec4d829e41b6b493459b77b2601a';
         } else {
-            url = 'https://newsapi.org/v2/top-headlines?country=' + countryValue + '&category=' + categoryValue + '&apiKey=1bba8f14ce07454285f34240181d07fc';
+            url = 'https://newsapi.org/v2/top-headlines?country=' + countryValue + '&category=' + categoryValue + '&apiKey=da33ec4d829e41b6b493459b77b2601a';
         }
         fetch(url)
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
             let articles = data.articles;
+            console.log(data);
             return articles.map(function(article) {
                 let li = document.createElement('li'),
                     div = document.createElement('div'),
@@ -64,7 +65,9 @@ export default class NewsData {
 
     tabClick(e) {
         document.getElementsByClassName('tab-is-active')[0].classList.remove('tab-is-active');
+        document.getElementsByClassName('link-is-active')[0].classList.remove('link-is-active');
         document.getElementById(e.target.dataset.id).classList.add('tab-is-active');
+        e.target.classList.add('link-is-active');
         if(e.target.dataset.id == 'tab-top-news') {
             this.category = null;
             this.section = 'js-top-results';
