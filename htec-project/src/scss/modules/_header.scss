@@ -6,12 +6,87 @@
     border-bottom: 1px solid $border-color;
     background-color: $header-bg;
     margin-bottom: 45px;
-    padding: 20px;
+    position: relative;
 }
 
 .header-wrapper {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    padding: 20px;
+}
+
+.header-navigation-wrapper {
+    @media only screen and (max-width: 600px) {
+        background-color: #fff;
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 88px;
+        width: 100%;
+
+        &.navigation-is-active {
+            height: initial;
+        }
+    }
+}
+
+.header-navigation-burger {
+    align-items: center;
+    cursor: pointer;
+    display: none;
+    height: 10px;
+    position: relative;
+    width: 20px;
+
+    @media only screen and (max-width: 600px) {
+        display: flex;
+    }
+}
+
+.burger-item {
+    background-color: $dark-txt-color;
+    display: block;
+    height: 2px;
+    width: 100%;
+
+    .burger-is-active & {
+        background-color: transparent;
+
+        &:before {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &:after {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        &:before,
+        &:after {
+            top: 50%;
+            bottom: initial;
+        }
+    }
+
+    &:before,
+    &:after {
+        background-color: $dark-txt-color;
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+
+    &:before {
+        top: 0px;
+    }
+
+    &:after {
+        bottom: 0px;
+    }
 }
 
 .header-navigation,
@@ -45,6 +120,15 @@
     &.link-is-active {
         &:before {
             width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        display: block;
+        padding: 15px;
+
+        &:before {
+            display: none;
         }
     }
 }

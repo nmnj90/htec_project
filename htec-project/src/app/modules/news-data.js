@@ -10,12 +10,14 @@ export default class NewsData {
     run() {
         this.getNewsData('js-top-results', 'gb', null);
 
+        document.getElementById('js-input-trigger').addEventListener('click', this.tiggerButtonInput.bind(this));
+
         for(let i = 0; i < document.getElementsByClassName('js-tab').length; i++) {
             document.getElementsByClassName('js-tab')[i].addEventListener('click', this.tabClick.bind(this));
         };
 
         for(let i = 0;i < document.getElementsByClassName('js-header-lang-btn').length; i++) {
-            document.getElementsByClassName('js-header-lang-btn')[i].addEventListener('click', this.triggerButton.bind(this));
+            document.getElementsByClassName('js-header-lang-btn')[i].addEventListener('click', this.triggerButtonLang.bind(this));
         }
 
         for(let i = 0; i < document.getElementsByClassName('js-accordion-title').length; i++){
@@ -54,7 +56,7 @@ export default class NewsData {
         })
     }
 
-    triggerButton(e) {
+    triggerButtonLang(e) {
         document.getElementsByClassName('btn-is-active')[0].classList.remove('btn-is-active');
         e.target.classList.add('btn-is-active');
         document.getElementById(this.section).innerHTML = '';
@@ -84,5 +86,13 @@ export default class NewsData {
         this.category = e.target.innerHTML;
         this.section = 'js-' + e.target.innerHTML;
         this.getNewsData(this.section, this.lang , this.category);
+    }
+
+    tiggerButtonInput(e) {
+        if(this.category == null) {
+            document.getElementsByClassName('link-is-active')[0].classList.remove('link-is-active');
+            document.getElementById('js-input-wrapper').classList.toggle('header-input-wrapper-is-active');
+            e.target.classList.add('link-is-active');
+        }
     }
 }
