@@ -72,15 +72,6 @@ export default class NewsData {
         })
     }
 
-    submitForm(e) {
-        if(document.getElementById('js-input').value.length > 0) {
-            document.getElementsByClassName('tab-is-active')[0].classList.remove('tab-is-active');
-            document.getElementById('tab-search').classList.add('tab-is-active');
-            this.getNewsData(this.section);
-            e.preventDefault();
-        }
-    }
-
     triggerButtonLang(e) {
         if(this.search == false) {
             document.querySelector('.btn-is-active').classList.remove('btn-is-active');
@@ -126,6 +117,15 @@ export default class NewsData {
         if(this.search == true) {
             document.getElementById('js-header-lang').classList.add('header-lang-is-disabled');
             document.getElementById('js-input-wrapper').classList.toggle('header-input-wrapper-is-active');
+        }
+    }
+
+    submitForm(e) {
+        if(document.getElementById('js-input').value.length > 0) {
+            document.getElementsByClassName('tab-is-active')[0].classList.remove('tab-is-active');
+            document.getElementById('tab-search').classList.add('tab-is-active');
+            this.getNewsData(this.section);
+            e.preventDefault();
         }
     }
 }
