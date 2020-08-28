@@ -85,8 +85,8 @@ export default class NewsData {
         if(this.search == false) {
             document.getElementsByClassName('btn-is-active')[0].classList.remove('btn-is-active');
             e.target.classList.add('btn-is-active');
-            document.getElementById(this.section).innerHTML = '';
             this.lang = e.target.innerHTML
+            document.getElementById(this.section).innerHTML = '';
             this.getNewsData(this.section, this.lang, this.category);
         }
     }
@@ -117,6 +117,7 @@ export default class NewsData {
         e.target.parentElement.classList.toggle('accordion-is-active');
         this.category = e.target.innerHTML;
         this.section = 'js-' + e.target.innerHTML;
+        document.getElementById(this.section).innerHTML = '';
         this.getNewsData(this.section, this.lang , this.category);
     }
 
