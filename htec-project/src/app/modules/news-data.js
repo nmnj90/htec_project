@@ -46,21 +46,28 @@ export default class NewsData {
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
             let articles = data.articles;
-            return articles.map(function(article) {
-                let li = document.createElement('li'),
-                    div = document.createElement('div'),
-                    h2 = document.createElement('h2'),
-                    img = document.createElement('img'),
-                    p = document.createElement('p');
-                h2.innerHTML = article.author;
-                img.src = article.urlToImage;
-                p.innerHTML = article.description;
-                li.appendChild(div);
-                div.appendChild(img);
-                div.appendChild(h2);
-                div.appendChild(p);
-                ul.appendChild(li);
-            })
+            if(data.articles.length > 0) {
+                return articles.map(function(article) {
+                    let li = document.createElement('li'),
+                        div = document.createElement('div'),
+                        h2 = document.createElement('h2'),
+                        img = document.createElement('img'),
+                        p = document.createElement('p');
+                    h2.innerHTML = article.author;
+                    img.src = article.urlToImage;
+                    p.innerHTML = article.description;
+                    li.appendChild(div);
+                    div.appendChild(img);
+                    div.appendChild(h2);
+                    div.appendChild(p);
+                    ul.appendChild(li);
+                })
+            } else {
+                let paragraph = 'No search results, please try again'
+                let p = document.createElement('p');
+                p.innerHTML = paragraph;
+                ul.appendChild(p);
+            }
         })
     }
 
