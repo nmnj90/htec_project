@@ -89,10 +89,9 @@ export default class NewsData {
     }
 
     tiggerButtonInput(e) {
-        if(this.category == null) {
-            document.getElementsByClassName('link-is-active')[0].classList.remove('link-is-active');
-            document.getElementById('js-input-wrapper').classList.toggle('header-input-wrapper-is-active');
-            e.target.classList.add('link-is-active');
-        }
+        document.getElementsByClassName('link-is-active')[0].classList.remove('link-is-active');
+        document.getElementById('js-input-wrapper').classList.toggle('header-input-wrapper-is-active');
+        e.target.classList.add('link-is-active');
+        
     }
 }
