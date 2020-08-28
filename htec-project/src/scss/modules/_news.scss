@@ -2,7 +2,8 @@
 // Top results
 //--------------------------------------------------------------
 
-.top-results {
+.top-results,
+.search{
     flex-wrap: wrap;
     margin: 0 -15px;
 
@@ -40,7 +41,8 @@
 }
 
 .top-results,
-.category-news {
+.category-news,
+.search {
     display: flex;
     padding: 0;
 

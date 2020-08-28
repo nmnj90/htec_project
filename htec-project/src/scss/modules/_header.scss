@@ -136,6 +136,10 @@
     }
 }
 
+.header-lang-is-disabled {
+    opacity: .5;
+}
+
 .header-lang-btn {
     background-color: rgba(#fff, .8);
     border:1px solid $btn-color;
@@ -153,12 +157,13 @@
 }
 
 .header-input-wrapper {
-    width: 0;
-    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
     transition: all .2s ease;
 
     &.header-input-wrapper-is-active {
-        width: 100%;
+        opacity: 1;
+        visibility: visible;
     }
 }
 
