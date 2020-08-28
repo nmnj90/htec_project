@@ -136,13 +136,18 @@
     }
 }
 
+.header-lang {
+    border:1px solid $btn-color;
+    border-radius: 5px;;
+    overflow: hidden;
+}
+
 .header-lang-is-disabled {
     opacity: .5;
 }
 
 .header-lang-btn {
     background-color: rgba(#fff, .8);
-    border:1px solid $btn-color;
     color: $btn-color;
     font-size: 18px;
     padding: 5px;
@@ -151,7 +156,6 @@
     
     &.btn-is-active {
         background-color: $btn-color;
-        border-color: transparent;
         color: #fff;
     }
 }
@@ -169,9 +173,20 @@
 
 .header-input {
     background-color: $body-bg;
+    border-radius: 5px;
     border: 0;
     color: $dark-txt-color;
     font-size: 15px;
     outline: none;
     padding: 8px;;
+}
+
+.header-submit {
+    border-radius: 5px;
+    border: none;
+    background-color: $btn-color;
+    color: #fff;
+    font-size: 15px;
+    margin-left: 5px;
+    padding: 8px 15px;
 }
