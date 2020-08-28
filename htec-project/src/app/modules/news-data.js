@@ -67,6 +67,7 @@ export default class NewsData {
                 let paragraph = 'No search results, please try again'
                 let p = document.createElement('p');
                 p.innerHTML = paragraph;
+                p.setAttribute("class", "search-message");
                 ul.appendChild(p);
             }
         })
