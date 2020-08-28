@@ -161,6 +161,7 @@
 }
 
 .header-input-wrapper {
+    display: flex;
     opacity: 0;
     visibility: hidden;
     transition: all .2s ease;
@@ -168,6 +169,16 @@
     &.header-input-wrapper-is-active {
         opacity: 1;
         visibility: visible;
+    }
+
+    @media only screen and (max-width: 600px) {
+        padding: 0 15px 10px;
+    }
+}
+
+.header-navigation-search {
+    @media only screen and (max-width: 600px) {
+        display: block;
     }
 }
 
@@ -178,7 +189,11 @@
     color: $dark-txt-color;
     font-size: 15px;
     outline: none;
-    padding: 8px;;
+    padding: 8px;
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+    }
 }
 
 .header-submit {
@@ -189,4 +204,8 @@
     font-size: 15px;
     margin-left: 5px;
     padding: 8px 15px;
+
+    &:focus {
+        outline: none;
+    }
 }
