@@ -22,8 +22,17 @@
     max-height: 0;
     margin-top: 20px;
     overflow: hidden;
+    position: relative;
 
     .accordion-is-active & {
         max-height: initial;
     }
+}
+
+.accordion-tooltip {
+    bottom: 10px;
+    color: $border-color;
+    font-size: 12px;
+    left: 10px;
+    position: absolute;
 }

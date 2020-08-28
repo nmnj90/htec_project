@@ -1,0 +1,16 @@
+//--------------------------------------------------------------
+// Animation
+//--------------------------------------------------------------
+
+@keyframes animation-opacity {
+
+    0%   {opacity: 1;}
+    50%  {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.animation-opacity {
+    animation-name: animation-opacity;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
