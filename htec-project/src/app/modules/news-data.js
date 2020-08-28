@@ -42,6 +42,7 @@ export default class NewsData {
                 url = 'https://newsapi.org/v2/top-headlines?country=' + countryValue + '&category=' + categoryValue + '&apiKey=da33ec4d829e41b6b493459b77b2601a';
             }
         }
+        document.getElementById(this.section).innerHTML = '';
         fetch(url)
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
@@ -75,18 +76,16 @@ export default class NewsData {
         if(document.getElementById('js-input').value.length > 0) {
             document.getElementsByClassName('tab-is-active')[0].classList.remove('tab-is-active');
             document.getElementById('tab-search').classList.add('tab-is-active');
-            document.getElementById('js-search').innerHTML = '';
-            this.getNewsData('js-search');
+            this.getNewsData(this.section);
             e.preventDefault();
         }
     }
 
     triggerButtonLang(e) {
         if(this.search == false) {
-            document.getElementsByClassName('btn-is-active')[0].classList.remove('btn-is-active');
+            document.querySelector('.btn-is-active').classList.remove('btn-is-active');
             e.target.classList.add('btn-is-active');
             this.lang = e.target.innerHTML
-            document.getElementById(this.section).innerHTML = '';
             this.getNewsData(this.section, this.lang, this.category);
         }
     }
@@ -108,7 +107,6 @@ export default class NewsData {
             document.getElementById('js-header-lang').classList.remove('header-lang-is-disabled');
             document.getElementById('js-input-wrapper').classList.remove('header-input-wrapper-is-active');
         }
-        document.getElementById(this.section).innerHTML = '';
         this.getNewsData(this.section, this.lang, this.category);
     }
 
@@ -117,7 +115,6 @@ export default class NewsData {
         e.target.parentElement.classList.toggle('accordion-is-active');
         this.category = e.target.innerHTML;
         this.section = 'js-' + e.target.innerHTML;
-        document.getElementById(this.section).innerHTML = '';
         this.getNewsData(this.section, this.lang , this.category);
     }
 
@@ -125,6 +122,7 @@ export default class NewsData {
         document.getElementsByClassName('link-is-active')[0].classList.remove('link-is-active');
         e.target.classList.add('link-is-active');
         this.search = true;
+        this.section = 'js-search'
         if(this.search == true) {
             document.getElementById('js-header-lang').classList.add('header-lang-is-disabled');
             document.getElementById('js-input-wrapper').classList.toggle('header-input-wrapper-is-active');
