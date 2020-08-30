@@ -43,6 +43,10 @@
             width: calc(100% - 10px);
         }
     }
+
+    a {
+        padding: 0 15px 30px;
+    }
 }
 
 .top-results,
@@ -83,19 +87,25 @@
     p {
         font-size: 14px;
         padding: 0 15px 15px;
+        flex-grow: 1;
     }
 
     a {
         color: $dark-txt-color;
         display: block;
         font-size: 12px;
-        padding: 0 15px 15px;
         transition: all .2s ease;
         text-align: right;
 
         &:hover {
             color: $btn-color;
         }
+    }
+}
+
+.top-results {
+    a {
+        padding: 0 15px 15px;
     }
 }
 
