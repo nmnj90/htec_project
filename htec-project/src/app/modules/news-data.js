@@ -47,20 +47,25 @@ export default class NewsData {
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
             let articles = data.articles;
+            console.log(articles);
             if(data.articles.length > 0) {
                 return articles.map(function(article) {
                     let li = document.createElement('li'),
                         div = document.createElement('div'),
                         h2 = document.createElement('h2'),
                         img = document.createElement('img'),
+                        a = document.createElement('a'),
                         p = document.createElement('p');
                     h2.innerHTML = article.author;
                     img.src = article.urlToImage;
                     p.innerHTML = article.description;
+                    a.innerHTML = 'Read more';
+                    a.setAttribute('href', article.url);
                     li.appendChild(div);
                     div.appendChild(img);
                     div.appendChild(h2);
                     div.appendChild(p);
+                    div.appendChild(a);
                     ul.appendChild(li);
                 })
             } else {

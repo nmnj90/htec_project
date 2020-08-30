@@ -84,10 +84,22 @@
         font-size: 14px;
         padding: 0 15px 15px;
     }
+
+    a {
+        color: $dark-txt-color;
+        display: block;
+        font-size: 12px;
+        padding: 0 15px 15px;
+        transition: all .2s ease;
+        text-align: right;
+
+        &:hover {
+            color: $btn-color;
+        }
+    }
 }
 
 .search {
-
     .search-message {
         font-size: 20px;
         text-align: center;
